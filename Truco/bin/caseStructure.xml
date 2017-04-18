@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<Case>
+    <CompoundAttribute isId="false">
+        <attribType/>
+        <name>Solution</name>
+    </CompoundAttribute>
+    <CompoundAttribute isId="false">
+        <attribType>CaseResult</attribType>
+        <name>Result</name>
+        <SimpleAttribute isId="true">
+            <attribType>java.lang.Integer</attribType>
+            <name>ResultID</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Boolean</attribType>
+            <name>WinRodada</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Boolean</attribType>
+            <name>WinMao</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Boolean</attribType>
+            <name>WinJogo</name>
+        </SimpleAttribute>
+    </CompoundAttribute>
+    <CompoundAttribute isId="false">
+        <attribType/>
+        <name>Justification</name>
+    </CompoundAttribute>
+    <CompoundAttribute isId="false">
+        <attribType>CaseDescription</attribType>
+        <name>Description</name>
+        <SimpleAttribute isId="true">
+            <attribType>java.lang.Integer</attribType>
+            <name>DescriptionID</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.String</attribType>
+            <name>J1Cartas</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Integer</attribType>
+            <name>J1Carta1</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Integer</attribType>
+            <name>J1Carta2</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Integer</attribType>
+            <name>J1Carta3</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.String</attribType>
+            <name>J2Cartas</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Integer</attribType>
+            <name>J2Carta1</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Integer</attribType>
+            <name>J2Carta2</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Integer</attribType>
+            <name>J2Carta3</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.String</attribType>
+            <name>J1CartaJogada</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Integer</attribType>
+            <name>J1CartaJogadaInt</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.String</attribType>
+            <name>J2CartaJogada</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Integer</attribType>
+            <name>J2CartaJogadaInt</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Boolean</attribType>
+            <name>Truco</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Boolean</attribType>
+            <name>Retruco</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Boolean</attribType>
+            <name>Vale4</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Boolean</attribType>
+            <name>Envido</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Boolean</attribType>
+            <name>RealEnvido</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Boolean</attribType>
+            <name>FaltaEnvido</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Boolean</attribType>
+            <name>Flor</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Boolean</attribType>
+            <name>FlorContra</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Boolean</attribType>
+            <name>FlorContraRes</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Integer</attribType>
+            <name>NivelCarta</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Integer</attribType>
+            <name>NivelTruco</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Integer</attribType>
+            <name>NivelEnvido</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Integer</attribType>
+            <name>NivelFlor</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Integer</attribType>
+            <name>J1Pontos</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Integer</attribType>
+            <name>J2Pontos</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.Integer</attribType>
+            <name>Rodada</name>
+        </SimpleAttribute>
+    </CompoundAttribute>
+</Case>
