@@ -147,5 +147,13 @@
             <attribType>java.lang.Integer</attribType>
             <name>Rodada</name>
         </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.String</attribType>
+            <name>JPediu</name>
+        </SimpleAttribute>
+        <SimpleAttribute isId="false">
+            <attribType>java.lang.String</attribType>
+            <name>JAceitou</name>
+        </SimpleAttribute>
     </CompoundAttribute>
 </Case>
