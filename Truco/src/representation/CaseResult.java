@@ -11,42 +11,6 @@ public class CaseResult implements CaseComponent {
 	/* Generated Class. Please Do Not Modify... */ 
 
 
-	private java.lang.Boolean WinJogo;
-
-
-	public java.lang.Boolean getWinJogo()
-		{
-			return WinJogo;
-		}
-	public void setWinJogo(java.lang.Boolean WinJogo29)
-		{
-			this.WinJogo = WinJogo29;
-		}
-
-	private java.lang.Boolean WinMao;
-
-
-	public java.lang.Boolean getWinMao()
-		{
-			return WinMao;
-		}
-	public void setWinMao(java.lang.Boolean WinMao30)
-		{
-			this.WinMao = WinMao30;
-		}
-
-	private java.lang.Boolean WinRodada;
-
-
-	public java.lang.Boolean getWinRodada()
-		{
-			return WinRodada;
-		}
-	public void setWinRodada(java.lang.Boolean WinRodada31)
-		{
-			this.WinRodada = WinRodada31;
-		}
-
 	private java.lang.Integer ResultID;
 
 
@@ -59,6 +23,30 @@ public class CaseResult implements CaseComponent {
 			this.ResultID = ResultID32;
 		}
 
+	private java.lang.Integer GanhouRodada;
+
+
+	public java.lang.Integer getGanhouRodada()
+		{
+			return GanhouRodada;
+		}
+	public void setGanhouRodada(java.lang.Integer GanhouRodada33)
+		{
+			this.GanhouRodada = GanhouRodada33;
+		}
+
+	private java.lang.Integer GanhouMao;
+
+
+	public java.lang.Integer getGanhouMao()
+		{
+			return GanhouMao;
+		}
+	public void setGanhouMao(java.lang.Integer GanhouMao34)
+		{
+			this.GanhouMao = GanhouMao34;
+		}
+
 
 	@Override
 	public Attribute getIdAttribute()
@@ -67,7 +55,7 @@ public class CaseResult implements CaseComponent {
 		} 
 
 	public String toString()		{
-			return "["+ WinRodada + " , " + WinJogo + " , " + ResultID + " , " + WinMao +"]";
+			return "["+ GanhouMao + " , " + GanhouRodada + " , " + ResultID +"]";
 		}
 
 }
