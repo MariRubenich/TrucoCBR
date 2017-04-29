@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<SimilarityConfig>
+    <Mapping attribute="Description.FlorGanho" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Equal" weight="1.00"/>
+    <Mapping attribute="Description.J2Carta3" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Interval" weight="0.80"/>
+    <Mapping attribute="Description.J2CartaJogada" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Equal" weight="0.00"/>
+    <Mapping attribute="Description.Retruco" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Equal" weight="1.00"/>
+    <Mapping attribute="Description.J2Carta2" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Interval" weight="0.80"/>
+    <Mapping attribute="Description.J2Carta1" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Interval" weight="0.80"/>
+    <Mapping attribute="Description.NivelCarta" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Equal" weight="0.75"/>
+    <Mapping attribute="Description.Truco" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Equal" weight="1.00"/>
+    <Mapping attribute="Description.J2Pontos" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Equal" weight="0.00"/>
+    <Mapping attribute="Description.J2CartaJogadaInt" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Interval" weight="1.00"/>
+    <Mapping attribute="Description.NivelEnvido" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Interval" weight="1.00"/>
+    <Mapping attribute="Description.EnvidoPediu" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Equal" weight="1.00"/>
+    <Mapping attribute="Description.J1Cartas" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Equal" weight="0.00"/>
+    <Mapping attribute="Description.Flor" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Equal" weight="1.00"/>
+    <Mapping attribute="Description.EnvidoGanho" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Equal" weight="1.00"/>
+    <Mapping attribute="Description.Rodada" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Equal" weight="1.00"/>
+    <Mapping attribute="Description.TrucoAceito" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Equal" weight="1.00"/>
+    <Mapping attribute="Description.Envido" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Equal" weight="1.00"/>
+    <Mapping attribute="Description.J1CartaJogadaInt" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Interval" weight="1.00"/>
+    <Mapping attribute="Description.EnvidoAceito" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Equal" weight="1.00"/>
+    <Mapping attribute="Description.J1Carta3" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Interval" weight="0.80"/>
+    <Mapping attribute="Description.TrucoPediu" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Equal" weight="1.00"/>
+    <Mapping attribute="Description.RetrucoAceito" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Equal" weight="1.00"/>
+    <Mapping attribute="Description.J1Carta2" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Interval" weight="0.80"/>
+    <Mapping attribute="Description.J2Cartas" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Equal" weight="0.00"/>
+    <Mapping attribute="Description.J1Carta1" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Interval" weight="0.80"/>
+    <Mapping attribute="Description.NivelTruco" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Equal" weight="1.00"/>
+    <Mapping attribute="Description.J1Pontos" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Equal" weight="0.00"/>
+    <Mapping attribute="Description.NivelFlor" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Interval" weight="1.00"/>
+    <Mapping attribute="Description.J1CartasInt" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Equal" weight="1.00"/>
+    <Mapping attribute="Description.FlorPediu" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Equal" weight="1.00"/>
+    <Mapping attribute="Description.J1CartaJogada" function="jcolibri.method.retrieve.NNretrieval.similarity.local.Equal" weight="0.00"/>
+    <Mapping attribute="Description" function="jcolibri.method.retrieve.NNretrieval.similarity.global.Average" weight="1.00"/>
+</SimilarityConfig>
