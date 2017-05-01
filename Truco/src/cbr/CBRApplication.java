@@ -313,9 +313,9 @@ public class CBRApplication implements StandardCBRApplication {
 			cbrApp.preCycle();
 			CBRQuery query = new CBRQuery();
 			query.setDescription(new CaseDescription());
-			query = jcolibri.method.gui.formFilling.ObtainQueryWithFormMethod.obtainQueryWithoutInitialValues(query, null, null);			
+			//query = jcolibri.method.gui.formFilling.ObtainQueryWithFormMethod.obtainQueryWithoutInitialValues(query, null, null);			
 			jcolibri.util.gui.DisplayCasesTableMethod.displayCasesInTableBasic(cbrApp.casebase.getCases());
-			cbrApp.cycle(CBRTruco.pedirEnvido());
+			//cbrApp.cycle(CBRTruco.pedirEnvido());
 			cbrApp.postCycle();
 			//CBRCaseBase caseBase = cbrApp.preCycle();
 			

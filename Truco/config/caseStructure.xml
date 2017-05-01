@@ -8,11 +8,11 @@
         <attribType>CaseResult</attribType>
         <name>Result</name>
         <SimpleAttribute isId="false">
-            <attribType>java.lang.Integer</attribType>
+            <attribType>java.lang.Boolean</attribType>
             <name>GanhouMao</name>
         </SimpleAttribute>
         <SimpleAttribute isId="false">
-            <attribType>java.lang.Integer</attribType>
+            <attribType>java.lang.Boolean</attribType>
             <name>GanhouRodada</name>
         </SimpleAttribute>
         <SimpleAttribute isId="true">

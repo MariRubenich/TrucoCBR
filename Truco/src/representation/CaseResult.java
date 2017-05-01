@@ -23,26 +23,26 @@ public class CaseResult implements CaseComponent {
 			this.ResultID = ResultID32;
 		}
 
-	private java.lang.Integer GanhouRodada;
+	private java.lang.Boolean GanhouRodada;
 
 
-	public java.lang.Integer getGanhouRodada()
+	public java.lang.Boolean getGanhouRodada()
 		{
 			return GanhouRodada;
 		}
-	public void setGanhouRodada(java.lang.Integer GanhouRodada33)
+	public void setGanhouRodada(java.lang.Boolean GanhouRodada33)
 		{
 			this.GanhouRodada = GanhouRodada33;
 		}
 
-	private java.lang.Integer GanhouMao;
+	private java.lang.Boolean GanhouMao;
 
 
-	public java.lang.Integer getGanhouMao()
+	public java.lang.Boolean getGanhouMao()
 		{
 			return GanhouMao;
 		}
-	public void setGanhouMao(java.lang.Integer GanhouMao34)
+	public void setGanhouMao(java.lang.Boolean GanhouMao34)
 		{
 			this.GanhouMao = GanhouMao34;
 		}

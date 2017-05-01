@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
 <TextFileConfiguration>
-    <FilePath>C:\Users\Felipe\Dropbox\Colibri\casosColibriTruco.csv</FilePath>
-    <Delimiters>;</Delimiters>
+    <FilePath>C:\Users\Felipe\Dropbox\Sistemas inteligentes\Truco\dist\casebase.csv</FilePath>
+    <Delimiters>,</Delimiters>
     <DescriptionClassName>representation.CaseDescription</DescriptionClassName>
     <DescriptionMappings>
         <Map>DescriptionID</Map>
         <Map>J1Cartas</Map>
         <Map>J1Carta1</Map>
-        <Map>J2Carta2</Map>
+        <Map>J1Carta2</Map>
         <Map>J1Carta3</Map>
         <Map>J2Cartas</Map>
         <Map>J2Carta1</Map>
@@ -18,14 +18,15 @@
         <Map>J2CartaJogada</Map>
         <Map>J2CartaJogadaInt</Map>
         <Map>Truco</Map>
+        <Map>TrucoPediu</Map>
+        <Map>TrucoAceito</Map>
         <Map>Retruco</Map>
-        <Map>Vale4</Map>
+        <Map>RetrucoAceito</Map>
         <Map>Envido</Map>
-        <Map>RealEnvido</Map>
-        <Map>FaltaEnvido</Map>
+        <Map>EnvidoAceito</Map>
+        <Map>EnvidoGanho</Map>
         <Map>Flor</Map>
-        <Map>FlorContra</Map>
-        <Map>FlorContraRes</Map>
+        <Map>FlorGanho</Map>
         <Map>NivelCarta</Map>
         <Map>NivelTruco</Map>
         <Map>NivelEnvido</Map>
@@ -33,12 +34,13 @@
         <Map>J1Pontos</Map>
         <Map>J2Pontos</Map>
         <Map>Rodada</Map>
+        <Map>EnvidoPediu</Map>
+        <Map>FlorPediu</Map>
     </DescriptionMappings>
     <ResultClassName>representation.CaseResult</ResultClassName>
     <ResultMappings>
-        <Map>WinJogo</Map>
         <Map>ResultID</Map>
-        <Map>WinRodada</Map>
-        <Map>WinMao</Map>
+        <Map>GanhouRodada</Map>
+        <Map>GanhouMao</Map>
     </ResultMappings>
 </TextFileConfiguration>
