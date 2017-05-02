@@ -301,6 +301,7 @@ public class CBRApplication implements StandardCBRApplication {
 	public void postCycle() throws ExecutionException {
 		connector.close();
 	}
+        
 
 	/**
 	 * Main method
@@ -313,9 +314,10 @@ public class CBRApplication implements StandardCBRApplication {
 			cbrApp.preCycle();
 			CBRQuery query = new CBRQuery();
 			query.setDescription(new CaseDescription());
-			//query = jcolibri.method.gui.formFilling.ObtainQueryWithFormMethod.obtainQueryWithoutInitialValues(query, null, null);			
-			jcolibri.util.gui.DisplayCasesTableMethod.displayCasesInTableBasic(cbrApp.casebase.getCases());
-			//cbrApp.cycle(CBRTruco.pedirEnvido());
+			query = jcolibri.method.gui.formFilling.ObtainQueryWithFormMethod.obtainQueryWithoutInitialValues(query, null, null);			
+			//jcolibri.util.gui.DisplayCasesTableMethod.displayCasesInTableBasic(cbrApp.casebase.getCases());
+                        //CBRTruco.pedirTruco(cbrApp.getSimilarityConfig(), cbrApp.casebase, 1,2,3,4,5,6,7);
+			cbrApp.cycle(query);
 			cbrApp.postCycle();
 			//CBRCaseBase caseBase = cbrApp.preCycle();
 			
