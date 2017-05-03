@@ -110,9 +110,9 @@ public class CBRTruco {
         if(result != null){
             System.out.println(result.getGanhouMao());
             if(result.getGanhouMao())
-                return "Pedir truco";
+                return "Aceitar truco";
             else
-                return "Não pedir truco";
+                return "Não aceitar truco";
         }
         return "Erro ao buscar caso";
     }
@@ -198,8 +198,9 @@ public class CBRTruco {
             for (RetrievalResult nse : eval){
                 if(nse.getEval() > evalvalue){
                     evalvalue = nse.getEval();
-                    result = (CaseDescription) nse.get_case().getDescription();
-
+                    CaseResult resultado = (CaseResult)nse.get_case().getResult();
+                    if(resultado.getGanhouRodada())
+                        result = (CaseDescription) nse.get_case().getDescription();
                 }
             }
         }
@@ -207,7 +208,7 @@ public class CBRTruco {
             System.out.println(result.getJ1CartaJogadaInt());
             return result.getJ1CartaJogada();
         }
-        return "Erro ao buscar caso";
+        return "Nenhum caso semelhante encontrado, jogue qualquer carta.";
     }
     
 }
