@@ -18,6 +18,7 @@ import jcolibri.method.retrieve.RetrievalResult;
 import jcolibri.method.retrieve.NNretrieval.NNScoringMethod;
 import jcolibri.method.retrieve.selection.SelectCases;
 import java.util.Collection;
+import trucointerface.telaprincipal;
 
 public class CBRApplication implements StandardCBRApplication {
 
@@ -77,19 +78,19 @@ public class CBRApplication implements StandardCBRApplication {
 		simConfig
 				.addMapping(
 						attribute1,
-						new jcolibri.method.retrieve.NNretrieval.similarity.local.Interval());
+						new jcolibri.method.retrieve.NNretrieval.similarity.local.Equal());
 		simConfig.setWeight(attribute1, 0.80);
 		Attribute attribute2 = new Attribute("J1Carta2", CaseDescription.class);
 		simConfig
 				.addMapping(
 						attribute2,
-						new jcolibri.method.retrieve.NNretrieval.similarity.local.Interval());
+						new jcolibri.method.retrieve.NNretrieval.similarity.local.Equal());
 		simConfig.setWeight(attribute2, 0.80);
 		Attribute attribute3 = new Attribute("J1Carta3", CaseDescription.class);
 		simConfig
 				.addMapping(
 						attribute3,
-						new jcolibri.method.retrieve.NNretrieval.similarity.local.Interval());
+						new jcolibri.method.retrieve.NNretrieval.similarity.local.Equal());
 		simConfig.setWeight(attribute3, 0.80);
 		Attribute attribute4 = new Attribute("J2Cartas", CaseDescription.class);
 		simConfig
@@ -101,19 +102,19 @@ public class CBRApplication implements StandardCBRApplication {
 		simConfig
 				.addMapping(
 						attribute5,
-						new jcolibri.method.retrieve.NNretrieval.similarity.local.Interval());
+						new jcolibri.method.retrieve.NNretrieval.similarity.local.Equal());
 		simConfig.setWeight(attribute5, 0.80);
 		Attribute attribute6 = new Attribute("J2Carta2", CaseDescription.class);
 		simConfig
 				.addMapping(
 						attribute6,
-						new jcolibri.method.retrieve.NNretrieval.similarity.local.Interval());
+						new jcolibri.method.retrieve.NNretrieval.similarity.local.Equal());
 		simConfig.setWeight(attribute6, 0.80);
 		Attribute attribute7 = new Attribute("J2Carta3", CaseDescription.class);
 		simConfig
 				.addMapping(
 						attribute7,
-						new jcolibri.method.retrieve.NNretrieval.similarity.local.Interval());
+						new jcolibri.method.retrieve.NNretrieval.similarity.local.Equal());
 		simConfig.setWeight(attribute7, 0.80);
 		Attribute attribute8 = new Attribute("J1CartaJogada",
 				CaseDescription.class);
@@ -127,7 +128,7 @@ public class CBRApplication implements StandardCBRApplication {
 		simConfig
 				.addMapping(
 						attribute9,
-						new jcolibri.method.retrieve.NNretrieval.similarity.local.Interval());
+						new jcolibri.method.retrieve.NNretrieval.similarity.local.Equal());
 		simConfig.setWeight(attribute9, 1.00);
 		Attribute attribute10 = new Attribute("J2CartaJogada",
 				CaseDescription.class);
@@ -141,7 +142,7 @@ public class CBRApplication implements StandardCBRApplication {
 		simConfig
 				.addMapping(
 						attribute11,
-						new jcolibri.method.retrieve.NNretrieval.similarity.local.Interval());
+						new jcolibri.method.retrieve.NNretrieval.similarity.local.Equal());
 		simConfig.setWeight(attribute11, 1.00);
 		Attribute attribute12 = new Attribute("Truco", CaseDescription.class);
 		simConfig
@@ -228,14 +229,14 @@ public class CBRApplication implements StandardCBRApplication {
 		simConfig
 				.addMapping(
 						attribute24,
-						new jcolibri.method.retrieve.NNretrieval.similarity.local.Interval());
+						new jcolibri.method.retrieve.NNretrieval.similarity.local.Equal());
 		simConfig.setWeight(attribute24, 1.00);
 		Attribute attribute25 = new Attribute("NivelFlor",
 				CaseDescription.class);
 		simConfig
 				.addMapping(
 						attribute25,
-						new jcolibri.method.retrieve.NNretrieval.similarity.local.Interval());
+						new jcolibri.method.retrieve.NNretrieval.similarity.local.Equal());
 		simConfig.setWeight(attribute25, 1.00);
 		Attribute attribute26 = new Attribute("J1Pontos", CaseDescription.class);
 		simConfig
@@ -314,10 +315,12 @@ public class CBRApplication implements StandardCBRApplication {
 			cbrApp.preCycle();
 			CBRQuery query = new CBRQuery();
 			query.setDescription(new CaseDescription());
-			query = jcolibri.method.gui.formFilling.ObtainQueryWithFormMethod.obtainQueryWithoutInitialValues(query, null, null);			
+			//query = jcolibri.method.gui.formFilling.ObtainQueryWithFormMethod.obtainQueryWithoutInitialValues(query, null, null);			
 			//jcolibri.util.gui.DisplayCasesTableMethod.displayCasesInTableBasic(cbrApp.casebase.getCases());
-                        //CBRTruco.pedirTruco(cbrApp.getSimilarityConfig(), cbrApp.casebase, 1,2,3,4,5,6,7);
-			cbrApp.cycle(query);
+                        //CBRTruco.pedirTruco(cbrApp.getSimilarityConfig(), cbrApp.casebase, 1,7,3,3,7,3,3);
+                        telaprincipal tela = new telaprincipal(cbrApp.getSimilarityConfig(), cbrApp.casebase);
+                        tela.setVisible(true);
+			//cbrApp.cycle(query);
 			cbrApp.postCycle();
 			//CBRCaseBase caseBase = cbrApp.preCycle();
 			

@@ -93,5 +93,17 @@ public class CBRTrucoQuery {
         return query;
     }
     
+    public static CBRQuery jogarCarta(Integer rodada, Integer carta1, Integer carta2, Integer carta3, Integer cartajogadv){
+        CBRQuery query = new CBRQuery();
+        CaseDescription caseCarta = new CaseDescription();
+        caseCarta.setJ1Carta1(carta1);
+        caseCarta.setJ1Carta2(carta2);
+        caseCarta.setJ1Carta3(carta3);
+        caseCarta.setRodada(rodada);
+        caseCarta.setJ2CartaJogadaInt(cartajogadv);
+        query.setDescription(caseCarta);
+        return query;
+    }
+    
     
 }

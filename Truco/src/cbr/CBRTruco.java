@@ -24,7 +24,7 @@ import representation.CaseResult;
  */
 public class CBRTruco {
                 
-    public static void pedirTruco(NNConfig simconfig, CBRCaseBase casebase, int niveltruco, int carta1, int carta2, int carta3, int cartaAdv1, int cartaAdv2, int cartaAdv3){
+    public static String pedirTruco(NNConfig simconfig, CBRCaseBase casebase, Integer niveltruco, Integer carta1, Integer carta2, Integer carta3, Integer cartaAdv1, Integer cartaAdv2, Integer cartaAdv3){
         List<CBRQuery> querylist= new ArrayList<CBRQuery>();
         List<Integer[]> cartasjogador = new ArrayList<Integer[]>();
         cartasjogador.add(new Integer[]{carta1, carta2, carta3});
@@ -52,7 +52,7 @@ public class CBRTruco {
             //System.out.println(query);
             Collection<RetrievalResult> eval = NNScoringMethod.evaluateSimilarity(
         	casebase.getCases(), query, simconfig);
-            System.out.println(eval);
+            //System.out.println(eval);
             eval = SelectCases.selectTopKRR(eval, 1);
             for (RetrievalResult nse : eval){
                 //System.out.println(nse.getEval());
@@ -63,11 +63,17 @@ public class CBRTruco {
                 }
             }
         }
-        if(result != null)
+        if(result != null){
             System.out.println(result.getGanhouMao());
+            if(result.getGanhouMao())
+                return "Pedir truco";
+            else
+                return "Não pedir truco";
+        }
+        return "Erro ao buscar caso";
     }
     
-    public static void aceitarTruco(NNConfig simconfig, CBRCaseBase casebase, int niveltruco, int carta1, int carta2, int carta3, int cartaAdv1, int cartaAdv2, int cartaAdv3){
+    public static String aceitarTruco(NNConfig simconfig, CBRCaseBase casebase, Integer niveltruco, Integer carta1, Integer carta2, Integer carta3, Integer cartaAdv1, Integer cartaAdv2, Integer cartaAdv3){
         List<CBRQuery> querylist= new ArrayList<CBRQuery>();
         List<Integer[]> cartasjogador = new ArrayList<Integer[]>();
         cartasjogador.add(new Integer[]{carta1, carta2, carta3});
@@ -101,11 +107,17 @@ public class CBRTruco {
                 }
             }
         }
-        if(result != null)
+        if(result != null){
             System.out.println(result.getGanhouMao());
+            if(result.getGanhouMao())
+                return "Pedir truco";
+            else
+                return "Não pedir truco";
+        }
+        return "Erro ao buscar caso";
     }
     
-    public static void pedirEnvido(NNConfig simconfig, CBRCaseBase casebase, int nivelenvido, int carta1, int carta2, int carta3){
+    public static String pedirEnvido(NNConfig simconfig, CBRCaseBase casebase, Integer nivelenvido, Integer carta1, Integer carta2, Integer carta3){
         List<CBRQuery> querylist= new ArrayList<CBRQuery>();
         querylist.add(CBRTrucoQuery.pedirEnvido(nivelenvido, carta1, carta2, carta3));
         querylist.add(CBRTrucoQuery.pedirEnvido(nivelenvido, carta1, carta3, carta2));
@@ -127,11 +139,17 @@ public class CBRTruco {
                 }
             }
         }
-        if(result != null)
+        if(result != null){
             System.out.println(result.getEnvidoGanho());
+            if(result.getEnvidoGanho())
+                return "Pedir envido";
+            else
+                return "Não pedir envido";
+        }
+        return "Erro ao buscar caso";
     }
         
-    public static void aceitarEnvido(NNConfig simconfig, CBRCaseBase casebase, int nivelenvido, int carta1, int carta2, int carta3){
+    public static String aceitarEnvido(NNConfig simconfig, CBRCaseBase casebase, Integer nivelenvido, Integer carta1, Integer carta2, Integer carta3){
         List<CBRQuery> querylist= new ArrayList<CBRQuery>();
         querylist.add(CBRTrucoQuery.aceitarEnvido(nivelenvido, carta1, carta2, carta3));
         querylist.add(CBRTrucoQuery.aceitarEnvido(nivelenvido, carta1, carta3, carta2));
@@ -153,8 +171,43 @@ public class CBRTruco {
                 }
             }
         }
-        if(result != null)
+        if(result != null){
             System.out.println(result.getEnvidoGanho());
-    }   
+            if(result.getEnvidoGanho())
+                return "Aceitar envido";
+            else
+                return "Não aceitar envido";
+        }
+        return "Erro ao buscar caso";
+    }
+    
+    public static String jogarCarta(NNConfig simconfig, CBRCaseBase casebase, Integer rodada, Integer carta1, Integer carta2, Integer carta3, Integer cartaadv){
+        List<CBRQuery> querylist= new ArrayList<CBRQuery>();
+        querylist.add(CBRTrucoQuery.jogarCarta(rodada, carta1, carta2, carta3, cartaadv));
+        querylist.add(CBRTrucoQuery.jogarCarta(rodada, carta1, carta3, carta2, cartaadv));
+        querylist.add(CBRTrucoQuery.jogarCarta(rodada, carta2, carta1, carta3, cartaadv));
+        querylist.add(CBRTrucoQuery.jogarCarta(rodada, carta2, carta3, carta1, cartaadv));
+        querylist.add(CBRTrucoQuery.jogarCarta(rodada, carta3, carta1, carta2, cartaadv));
+        querylist.add(CBRTrucoQuery.jogarCarta(rodada, carta3, carta2, carta1, cartaadv));
+        double evalvalue = 0;
+        CaseDescription result = null;
+        for(CBRQuery query : querylist){
+            Collection<RetrievalResult> eval = NNScoringMethod.evaluateSimilarity(
+        	casebase.getCases(), query, simconfig);
+            eval = SelectCases.selectTopKRR(eval, 1);
+            for (RetrievalResult nse : eval){
+                if(nse.getEval() > evalvalue){
+                    evalvalue = nse.getEval();
+                    result = (CaseDescription) nse.get_case().getDescription();
+
+                }
+            }
+        }
+        if(result != null){
+            System.out.println(result.getJ1CartaJogadaInt());
+            return result.getJ1CartaJogada();
+        }
+        return "Erro ao buscar caso";
+    }
     
 }

@@ -5,18 +5,34 @@
  */
 package trucointerface;
 
+import cbr.CBRTruco;
+import cbr.CBRTrucoUtil;
+import javax.swing.JOptionPane;
+import jcolibri.cbrcore.CBRCaseBase;
+import jcolibri.method.retrieve.NNretrieval.NNConfig;
+
 /**
  *
  * @author Everson
  */
 public class telaprincipal extends javax.swing.JFrame {
-
+    
+    
+    private NNConfig simconfig;
+    private CBRCaseBase casebase;
     /**
      * Creates new form telaprincipal
      */
     public telaprincipal() {
         initComponents();
     }
+    
+    public telaprincipal(NNConfig simconfig, CBRCaseBase casebase) {
+        this.simconfig = simconfig;
+        this.casebase = casebase;
+        initComponents();
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -31,25 +47,49 @@ public class telaprincipal extends javax.swing.JFrame {
         jtnum_carta_2 = new javax.swing.JTextField();
         jtnum_carta_3 = new javax.swing.JTextField();
         jcbnaipe_carta1 = new javax.swing.JComboBox();
-        jcbnaipe_carta_2 = new javax.swing.JComboBox();
-        jcbnaipe_carta_3 = new javax.swing.JComboBox();
+        jcbnaipe_carta2 = new javax.swing.JComboBox();
+        jcbnaipe_carta3 = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jbenvido = new javax.swing.JButton();
-        jbtruco = new javax.swing.JButton();
+        jbpedirenvido = new javax.swing.JButton();
+        jbpedirtruco = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jtnum_carta_jog = new javax.swing.JTextField();
+        jcbnaipe_cartajog = new javax.swing.JComboBox();
+        jcbrodada = new javax.swing.JComboBox();
+        jbcarta = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jtnum_carta_4 = new javax.swing.JTextField();
+        jcbnaipe_carta4 = new javax.swing.JComboBox();
+        jcbnaipe_carta5 = new javax.swing.JComboBox();
+        jcbnaipe_carta6 = new javax.swing.JComboBox();
+        jtnum_carta_6 = new javax.swing.JTextField();
+        jtnum_carta_5 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jtniveltruco = new javax.swing.JTextField();
+        jbaceitartruco = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
+        jtnivelenvido = new javax.swing.JTextField();
+        jbaceitarenvido = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Truco Gaudério");
 
         jcbnaipe_carta1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Espada", "Basto", "Ouro", "Copa" }));
 
-        jcbnaipe_carta_2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Espada", "Basto", "Ouro", "Copa" }));
+        jcbnaipe_carta2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Espada", "Basto", "Ouro", "Copa" }));
 
-        jcbnaipe_carta_3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Espada", "Basto", "Ouro", "Copa" }));
+        jcbnaipe_carta3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Espada", "Basto", "Ouro", "Copa" }));
 
         jLabel1.setText("NÚMERO DA CARTA:");
 
@@ -63,17 +103,74 @@ public class telaprincipal extends javax.swing.JFrame {
 
         jLabel6.setText("Carta 3:");
 
-        jbenvido.setText("ENVIDO");
-        jbenvido.addActionListener(new java.awt.event.ActionListener() {
+        jbpedirenvido.setText("PEDIR ENVIDO?");
+        jbpedirenvido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbenvidoActionPerformed(evt);
+                jbpedirenvidoActionPerformed(evt);
             }
         });
 
-        jbtruco.setText("TRUCO");
-        jbtruco.addActionListener(new java.awt.event.ActionListener() {
+        jbpedirtruco.setText("PEDIR TRUCO?");
+        jbpedirtruco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtrucoActionPerformed(evt);
+                jbpedirtrucoActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Carta Jogada Adversário:");
+
+        jLabel8.setText("Rodada:");
+
+        jcbnaipe_cartajog.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Espada", "Copa", "Ouro", "Basto" }));
+
+        jcbrodada.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3" }));
+
+        jbcarta.setText("QUAL CARTA JOGAR?");
+        jbcarta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbcartaActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setText("INFORME AS CARTAS QUE O ADVERSARIO JA JOGOU:");
+
+        jLabel10.setText("NÚMERO DA CARTA:");
+
+        jLabel11.setText("NAIPE:");
+
+        jLabel12.setText("Carta 1:");
+
+        jcbnaipe_carta4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Espada", "Basto", "Ouro", "Copa" }));
+
+        jcbnaipe_carta5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Espada", "Basto", "Ouro", "Copa" }));
+
+        jcbnaipe_carta6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Espada", "Basto", "Ouro", "Copa" }));
+
+        jLabel13.setText("Carta 2:");
+
+        jLabel14.setText("Carta 3:");
+
+        jLabel15.setText("NIVEL TRUCO:");
+
+        jbaceitartruco.setText("ACEITAR TRUCO?");
+        jbaceitartruco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbaceitartrucoActionPerformed(evt);
+            }
+        });
+
+        jLabel16.setText("NIVEL ENVIDO:");
+
+        jtnivelenvido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtnivelenvidoActionPerformed(evt);
+            }
+        });
+
+        jbaceitarenvido.setText("ACEITAR ENVIDO?");
+        jbaceitarenvido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbaceitarenvidoActionPerformed(evt);
             }
         });
 
@@ -102,65 +199,297 @@ public class telaprincipal extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jtnum_carta_3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jcbnaipe_carta_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jcbnaipe_carta3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jtnum_carta_2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jcbnaipe_carta_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jcbnaipe_carta2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jtnum_carta_1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jcbnaipe_carta1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jbenvido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jbtruco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(25, Short.MAX_VALUE))
+                            .addComponent(jbpedirtruco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jtniveltruco, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jbaceitartruco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(34, 34, 34)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel7)
+                                            .addComponent(jLabel8))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jtnum_carta_jog, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jcbnaipe_cartajog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jcbrodada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(83, 83, 83)
+                                        .addComponent(jbcarta))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(71, 71, 71)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jbpedirenvido, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel16)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jtnivelenvido, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jbaceitarenvido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel11))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel13)
+                                    .addComponent(jLabel14))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jtnum_carta_6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jcbnaipe_carta6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jtnum_carta_5, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jcbnaipe_carta5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jtnum_carta_4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jcbnaipe_carta4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                .addGap(35, 35, 35))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtnum_carta_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcbnaipe_carta1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel7)
+                            .addComponent(jtnum_carta_jog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcbnaipe_cartajog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtnum_carta_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcbnaipe_carta2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel8)
+                            .addComponent(jcbrodada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtnum_carta_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcbnaipe_carta3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)
+                            .addComponent(jbcarta))
+                        .addGap(43, 43, 43)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel15)
+                            .addComponent(jtniveltruco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel16)
+                            .addComponent(jtnivelenvido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jbpedirenvido)
+                            .addComponent(jbpedirtruco)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtnum_carta_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcbnaipe_carta4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtnum_carta_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcbnaipe_carta5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jtnum_carta_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcbnaipe_carta6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel14))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtnum_carta_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jcbnaipe_carta1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtnum_carta_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jcbnaipe_carta_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtnum_carta_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jcbnaipe_carta_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(27, 27, 27)
-                .addComponent(jbenvido)
-                .addGap(18, 18, 18)
-                .addComponent(jbtruco)
-                .addContainerGap(21, Short.MAX_VALUE))
+                    .addComponent(jbaceitartruco)
+                    .addComponent(jbaceitarenvido))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbtrucoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtrucoActionPerformed
+    private void jbpedirtrucoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbpedirtrucoActionPerformed
         // TODO add your handling code here:
-        telatruco obj = new telatruco();
-        obj.setVisible(true);
-    }//GEN-LAST:event_jbtrucoActionPerformed
+        Integer carta1 = null;
+        Integer carta2 = null;
+        Integer carta3 = null;
+        Integer cartaadv1 = null;
+        Integer cartaadv2 = null;
+        Integer cartaadv3 = null;
+        Integer nivelTruco = null;
+        if(!jtnum_carta_1.getText().isEmpty()){
+             carta1 = CBRTrucoUtil.getCardValue(jtnum_carta_1.getText(), (String)jcbnaipe_carta1.getSelectedItem());
+        }
+        if(!jtnum_carta_2.getText().isEmpty()){
+             carta2 = CBRTrucoUtil.getCardValue(jtnum_carta_2.getText(), (String)jcbnaipe_carta2.getSelectedItem());
+        }
+        if(!jtnum_carta_3.getText().isEmpty()){
+             carta3 = CBRTrucoUtil.getCardValue(jtnum_carta_3.getText(), (String)jcbnaipe_carta3.getSelectedItem());
+        }
+        if(!jtnum_carta_4.getText().isEmpty()){
+             cartaadv1 = CBRTrucoUtil.getCardValue(jtnum_carta_4.getText(), (String)jcbnaipe_carta4.getSelectedItem());
+        }
+        if(!jtnum_carta_5.getText().isEmpty()){
+             cartaadv2 = CBRTrucoUtil.getCardValue(jtnum_carta_5.getText(), (String)jcbnaipe_carta5.getSelectedItem());
+        }
+        if(!jtnum_carta_6.getText().isEmpty()){
+             cartaadv3 = CBRTrucoUtil.getCardValue(jtnum_carta_6.getText(), (String)jcbnaipe_carta6.getSelectedItem());
+        }
+        if(!jtniveltruco.getText().isEmpty()){
+             nivelTruco = Integer.parseInt(jtniveltruco.getText());
+        }
+        String output = CBRTruco.pedirTruco(simconfig, casebase, nivelTruco, carta1, carta2, carta3, cartaadv1, cartaadv2, cartaadv3);
+        JOptionPane.showMessageDialog(this, output);
 
-    private void jbenvidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbenvidoActionPerformed
+    }//GEN-LAST:event_jbpedirtrucoActionPerformed
+
+    private void jbpedirenvidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbpedirenvidoActionPerformed
         // TODO add your handling code here:
+        Integer carta1 = null;
+        Integer carta2 = null;
+        Integer carta3 = null;
+        Integer nivelEnvido = null;
+        if(!jtnum_carta_1.getText().isEmpty()){
+             carta1 = CBRTrucoUtil.getCardValue(jtnum_carta_1.getText(), (String)jcbnaipe_carta1.getSelectedItem());
+        }
+        if(!jtnum_carta_2.getText().isEmpty()){
+             carta2 = CBRTrucoUtil.getCardValue(jtnum_carta_2.getText(), (String)jcbnaipe_carta2.getSelectedItem());
+        }
+        if(!jtnum_carta_3.getText().isEmpty()){
+             carta3 = CBRTrucoUtil.getCardValue(jtnum_carta_3.getText(), (String)jcbnaipe_carta3.getSelectedItem());
+        }
+        if(!jtnivelenvido.getText().isEmpty()){
+             nivelEnvido = Integer.parseInt(jtnivelenvido.getText());
+        }
+        String output = CBRTruco.pedirEnvido(simconfig, casebase, nivelEnvido, carta1, carta2, carta3);
+        JOptionPane.showMessageDialog(this, output);
+
+    }//GEN-LAST:event_jbpedirenvidoActionPerformed
+
+    private void jtnivelenvidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtnivelenvidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtnivelenvidoActionPerformed
+
+    private void jbcartaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbcartaActionPerformed
+        // TODO add your handling code here:
+        Integer carta1 = null;
+        Integer carta2 = null;
+        Integer carta3 = null;
+        Integer cartaadv = null;
+        if(!jtnum_carta_1.getText().isEmpty()){
+             carta1 = CBRTrucoUtil.getCardValue(jtnum_carta_1.getText(), (String)jcbnaipe_carta1.getSelectedItem());
+        }
+        if(!jtnum_carta_2.getText().isEmpty()){
+             carta2 = CBRTrucoUtil.getCardValue(jtnum_carta_2.getText(), (String)jcbnaipe_carta2.getSelectedItem());
+        }
+        if(!jtnum_carta_3.getText().isEmpty()){
+             carta3 = CBRTrucoUtil.getCardValue(jtnum_carta_3.getText(), (String)jcbnaipe_carta3.getSelectedItem());
+        }
+        if(!jtnum_carta_jog.getText().isEmpty()){
+             cartaadv = CBRTrucoUtil.getCardValue(jtnum_carta_jog.getText(), (String)jcbnaipe_cartajog.getSelectedItem());
+        }
         
-        telaenvido obj = new telaenvido();
-        obj.setVisible(true);
-    }//GEN-LAST:event_jbenvidoActionPerformed
+        Integer rodada = Integer.parseInt((String)jcbrodada.getSelectedItem());
+        String output = CBRTruco.jogarCarta(simconfig, casebase, rodada, carta1, carta2, carta3, cartaadv);
+        JOptionPane.showMessageDialog(this, output);
+        //System.out.println("Teste");
+        //CBRTruco.jogarCarta(simconfig, casebase, 1, 3, 2, 1, 5);
+    }//GEN-LAST:event_jbcartaActionPerformed
+
+    private void jbaceitartrucoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbaceitartrucoActionPerformed
+        // TODO add your handling code here:
+        Integer carta1 = null;
+        Integer carta2 = null;
+        Integer carta3 = null;
+        Integer cartaadv1 = null;
+        Integer cartaadv2 = null;
+        Integer cartaadv3 = null;
+        Integer nivelTruco = null;
+        if(!jtnum_carta_1.getText().isEmpty()){
+             carta1 = CBRTrucoUtil.getCardValue(jtnum_carta_1.getText(), (String)jcbnaipe_carta1.getSelectedItem());
+        }
+        if(!jtnum_carta_2.getText().isEmpty()){
+             carta2 = CBRTrucoUtil.getCardValue(jtnum_carta_2.getText(), (String)jcbnaipe_carta2.getSelectedItem());
+        }
+        if(!jtnum_carta_3.getText().isEmpty()){
+             carta3 = CBRTrucoUtil.getCardValue(jtnum_carta_3.getText(), (String)jcbnaipe_carta3.getSelectedItem());
+        }
+        if(!jtnum_carta_4.getText().isEmpty()){
+             cartaadv1 = CBRTrucoUtil.getCardValue(jtnum_carta_4.getText(), (String)jcbnaipe_carta4.getSelectedItem());
+        }
+        if(!jtnum_carta_5.getText().isEmpty()){
+             cartaadv2 = CBRTrucoUtil.getCardValue(jtnum_carta_5.getText(), (String)jcbnaipe_carta5.getSelectedItem());
+        }
+        if(!jtnum_carta_6.getText().isEmpty()){
+             cartaadv3 = CBRTrucoUtil.getCardValue(jtnum_carta_6.getText(), (String)jcbnaipe_carta6.getSelectedItem());
+        }
+        if(!jtniveltruco.getText().isEmpty()){
+             nivelTruco = Integer.parseInt(jtniveltruco.getText());
+        }
+        String output = CBRTruco.aceitarTruco(simconfig, casebase, nivelTruco, carta1, carta2, carta3, cartaadv1, cartaadv2, cartaadv3);
+        JOptionPane.showMessageDialog(this, output);
+
+    }//GEN-LAST:event_jbaceitartrucoActionPerformed
+
+    private void jbaceitarenvidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbaceitarenvidoActionPerformed
+        // TODO add your handling code here:
+        Integer carta1 = null;
+        Integer carta2 = null;
+        Integer carta3 = null;
+        Integer nivelEnvido = null;
+        if(!jtnum_carta_1.getText().isEmpty()){
+             carta1 = CBRTrucoUtil.getCardValue(jtnum_carta_1.getText(), (String)jcbnaipe_carta1.getSelectedItem());
+        }
+        if(!jtnum_carta_2.getText().isEmpty()){
+             carta2 = CBRTrucoUtil.getCardValue(jtnum_carta_2.getText(), (String)jcbnaipe_carta2.getSelectedItem());
+        }
+        if(!jtnum_carta_3.getText().isEmpty()){
+             carta3 = CBRTrucoUtil.getCardValue(jtnum_carta_3.getText(), (String)jcbnaipe_carta3.getSelectedItem());
+        }
+        if(!jtnivelenvido.getText().isEmpty()){
+             nivelEnvido = Integer.parseInt(jtnivelenvido.getText());
+        }
+        String output = CBRTruco.aceitarEnvido(simconfig, casebase, nivelEnvido, carta1, carta2, carta3);
+        JOptionPane.showMessageDialog(this, output);
+    }//GEN-LAST:event_jbaceitarenvidoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,18 +531,42 @@ public class telaprincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JButton jbenvido;
-    private javax.swing.JButton jbtruco;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton jbaceitarenvido;
+    private javax.swing.JButton jbaceitartruco;
+    private javax.swing.JButton jbcarta;
+    private javax.swing.JButton jbpedirenvido;
+    private javax.swing.JButton jbpedirtruco;
     private javax.swing.JComboBox jcbnaipe_carta1;
-    private javax.swing.JComboBox jcbnaipe_carta_2;
-    private javax.swing.JComboBox jcbnaipe_carta_3;
+    private javax.swing.JComboBox jcbnaipe_carta2;
+    private javax.swing.JComboBox jcbnaipe_carta3;
+    private javax.swing.JComboBox jcbnaipe_carta4;
+    private javax.swing.JComboBox jcbnaipe_carta5;
+    private javax.swing.JComboBox jcbnaipe_carta6;
+    private javax.swing.JComboBox jcbnaipe_cartajog;
+    private javax.swing.JComboBox jcbrodada;
+    private javax.swing.JTextField jtnivelenvido;
+    private javax.swing.JTextField jtniveltruco;
     private javax.swing.JTextField jtnum_carta_1;
     private javax.swing.JTextField jtnum_carta_2;
     private javax.swing.JTextField jtnum_carta_3;
+    private javax.swing.JTextField jtnum_carta_4;
+    private javax.swing.JTextField jtnum_carta_5;
+    private javax.swing.JTextField jtnum_carta_6;
+    private javax.swing.JTextField jtnum_carta_jog;
     // End of variables declaration//GEN-END:variables
 }
